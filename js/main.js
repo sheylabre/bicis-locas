@@ -3,7 +3,7 @@ function validateForm(){
     var name = document.getElementById("name").value;
     if (name == ""){
         alert("llenar el campo nombre por favor");
-    } else if (/^[a-z]/.test(name.charAt(0))){
+    } else if (/^[a-z]$/.test(name.charAt(0))){
         alert("Por favor ingrese la primera letra en mayuscula");
     } else if (/^[0-9]/.test(name.charAt(0))){
         alert("Por favor no ingrese numeros");
@@ -12,10 +12,11 @@ function validateForm(){
     if (lastname == ""){
         alert("llenar el campo apellido por favor");
     }
+    var correo1 = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var email = document.getElementById("input-email").value;
     if (email == ""){
         alert("llenar el campo correo por favor");
-    } else if (/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(email)) {
+    } else if (!correo1.test(email)) {
         alert("correo invalido");
     }
     var password = document.getElementById("input-password").value;
